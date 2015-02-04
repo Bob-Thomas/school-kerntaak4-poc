@@ -1,0 +1,53 @@
+extends layout
+block content
+    .container-fluid
+        .row
+            div(style='text-align: center')
+              h1 Nieuwe wijziging
+          .row
+            form(method='post', action='/addissue')
+              .col-md-offset-2.col-md-4
+                .form-group
+                  label(for='name') Naam
+                  |                     
+                  input#name.form-control(type='text', placeholder='', name='name')
+                | 
+                .form-group
+                  label(for='description') Korte omschrijving
+                  |                     
+                  input#description.form-control(type='text', placeholder='', name='description')
+                |                 
+              |             
+              .col-md-4
+                .form-group
+                  label(for='aangedragen_door') Aangedragen door
+                  |                     
+                  input#aangedragen_door.form-control(type='text', placeholder='', name='author')
+                |                 
+                .form-group
+                  label(for='toegewezen_aan') Toegewezen aan
+                  |                     
+                  input#toegewezen_aan.form-control(type='text', placeholder='', name='assigned')
+                |                 
+                .form-group
+                  label(for='gestest_door') Getest door
+                  |                     
+                  input#gestest_door.form-control(type='text', placeholder='', name='testedBy')
+                |                 
+                .form-group
+                  label(for='status') Status
+                  |                     
+                  select(name='status', id='status')
+                      option(value='open') Open
+                      option(value='closed') Closed
+                      option(value='progress') Inprogress
+                |                 
+                .form-group
+                  label(for='prioriteit') Prioriteit
+                  |                     
+                  select(name='priority', id='prioriteit')
+                      option(value='high') Open
+                      option(value='med') Closed
+                      option(value='low') Inprogress
+                  |                 
+                button.btn.btn-success(style='margin-top: 25px; float: right',     type='submit') Maak wijziging aan

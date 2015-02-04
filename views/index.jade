@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    .container-fluid
+      .row
+        .col-md-offset-2.col-md-8
+          table.table
+            tr
+              th Naam
+              |                     
+              th Status
+              |                     
+              th Opties
+            | 
+            each issue, i in issueList                
+                tr
+                    td #{issue.name}
+                    |                     
+                    td #{issue.status}
+                    |                     
+                    td
+                       a(href='/issue/#{issue._id}').btn.btn-primary Bekijk
+                       |                         
+                       a(href='/delete/#{issue._id}').btn.btn-danger Verwijder
+          |                    
+          a(href='')

@@ -1,0 +1,51 @@
+extends layout
+block content 
+    .container-fluid
+        .row
+            div(style='text-align: center')
+              h1 Bekijk wijziging
+          .row
+            form(action='')
+              .col-md-offset-2.col-md-4              
+                .form-group
+                  label(for='beschrijving') Beschrijving
+                  |                     
+                  textarea#beschrijving.form-control(rows='12') #{issue.description}
+              |             
+              .col-md-4
+                .form-group
+                  label(for='aangedragen_door') Aangedragen door
+                  |                     
+                  input#aangedragen_door.form-control(type='text', placeholder='', value='#{issue.author}')
+                |                 
+                .form-group
+                  label(for='toegewezen_aan') Toegewezen aan
+                  |                     
+                  input#toegewezen_aan.form-control(type='text', placeholder='', value='#{issue.assigned}')
+                |                 
+                .form-group
+                  label(for='testedBY') Toegewezen aan
+                  |                     
+                  input#testedBY.form-control(type='text', placeholder='', value='#{issue.testedBy}')
+                |  
+                .form-group
+                  label(for='status') Status
+                  |                     
+                  input#status.form-control(type='text', placeholder='', value='#{issue.status}')
+                |                 
+                .form-group
+                  label(for='prioriteit') Prioriteit
+                  |                     
+                  input#prioriteit.form-control(type='text', placeholder='', value='#{issue.priority}')     
+          .row
+            .col-md-offset-3.col-md-6
+              .well
+                each comment, i in issue.comments
+                    p(style='color:red') #{comment.name} | #{comment.content}
+          .row
+            .col-md-offset-3.col-md-6
+              .well
+                .form-group
+                  label(for='commentaar') Commentaar
+                  |                     
+                  textarea#commentaar.form-control(rows='3')

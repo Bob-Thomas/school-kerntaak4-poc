@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	.container-fluid
+		.row
+			.col-md-offset-2.col-md-8
+				table.table
+					tr
+						th Naam
+						th Functie
+					each user, i in userlist                 
+						tr
+							td #{user.firstName}  #{user.lastName}
+							td #{user.profession}

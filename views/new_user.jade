@@ -1,0 +1,51 @@
+extends layout
+block content
+     .container-fluid
+         .row
+             div(style='text-align: center')
+               h1 Maak nieuw persoon
+            .row
+             form(method='post' ,action='/adduser')
+               .col-md-offset-2.col-md-4
+                 .form-group
+                   label(for='afkorting') Afkorting
+                   |                      
+                   input#afkorting.form-control(type='text', placeholder='')
+                 |                 
+                 .form-group
+                   label(for='voornaam') Voornaam
+                   |                     
+                   input#voornaam.form-control(type='text', placeholder='', name='firstName')
+                 |                 
+                 .form-group
+                   label(for='achternaam') Achternaam
+                   |                     
+                   input#achternaam.form-control(type='text', placeholder='', name='lastName')
+                 |                 
+                 .form-group
+                   label(for='email') E-mailadres
+                   |                     
+                   input#email.form-control(type='email', placeholder='', name='email')
+               |             
+               .col-md-4
+                 .form-group
+                   label(for='wachtwoord') Wachtwoord
+                   |                     
+                   input#wachtwoord.form-control(type='password', placeholder='', name='password')
+                 |                 
+                 .form-group
+                   label(for='afbeelding') Afbeelding
+                   |                     
+                   input#afbeelding.form-control(type='file', placeholder='')
+                 |                 
+                 .form-group
+                   label(for='beroep') Beroep
+                   |                     
+                   input#beroep.form-control(type='text', placeholder='', name='profession')
+                 |                 
+                 .form-group
+                   label(for='function') Functie
+                   |                     
+                   input#functie.form-control(type='text', placeholder='', name='function')
+                 |                 
+                 button.btn.btn-success(style='margin-top: 25px;', type='submit') Maak persoon aan
