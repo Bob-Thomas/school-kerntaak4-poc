@@ -13,7 +13,7 @@ block content
               th Opties
             | 
             each issue, i in issueList                
-                tr
+                tr(class="#{issue.status==='closed' ? 'red' : ''} #{issue.status==='progress' ? 'orange' : '' } #{issue.status==='open' ? 'green' : '' }")
                     td #{issue.name}
                     |                     
                     td #{issue.status}
